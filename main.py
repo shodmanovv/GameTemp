@@ -28,8 +28,8 @@ import asyncio
 import aioschedule
 import utils
 import openai
-#import numexpr
-#from numpy import number
+import numexpr
+from numpy import number
 from time import gmtime, strptime, strftime
 from filters.admins import IsBot
 from filters.register import IsRegister2
@@ -37,7 +37,7 @@ from keyboard.qiwi import  buy_menu, gamestavka
 from keyboard.marry import button_marry,button_divorce
 from keyboard.gey import apanel, back, serebro, zolotaya, rybinovaya, red, balanc, ustanovka
 from keyboard.main import help_top, help_topback, help_perexod
-#from pyqiwip2p import QiwiP2P
+from pyqiwip2p import QiwiP2P
 from pycoingecko import CoinGeckoAPI
 import emoji as emo
 import os
@@ -59,7 +59,7 @@ openai.api_key = "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"
 scheduler =AsyncIOScheduler(timezone="Europe/Moscow")
 
 # datebase
-#p2p = QiwiP2P(auth_key=cfg.QIWI_TOKEN)
+p2p = QiwiP2P(auth_key=cfg.QIWI_TOKEN)
 
 connect = sqlite3.connect("db/redshark.db")
 cursor = connect.cursor()
